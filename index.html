@@ -16,7 +16,6 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.92);backd
 .logo small{display:block;font-family:'Poppins';font-weight:500;letter-spacing:3px;font-size:9px;color:var(--gold);margin-top:2px}
 .header-actions{display:flex;gap:8px;align-items:center}
 .call-btn{background:white;border:1px solid var(--line);color:var(--black);padding:10px 14px;border-radius:999px;text-decoration:none;font-weight:700;font-size:12px;display:flex;align-items:center;gap:6px}
-.call-btn:hover{border-color:var(--black)}
 .cart-link{background:var(--black);color:white;padding:10px 16px;border-radius:999px;text-decoration:none;font-weight:700;font-size:12px}
 .banner{background:var(--ocean);color:#fff;text-align:center;padding:10px;font-size:11px;letter-spacing:2px;font-weight:600}
 .banner b{color:var(--gold)}
@@ -34,7 +33,7 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.92);backd
 .container{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:22px;padding:20px 24px}
 .card{background:white;border:1px solid var(--line);border-radius:24px;padding:12px 12px 16px;box-shadow:0 12px 30px rgba(0,0,0,0.04);transition:.35s;position:relative;overflow:hidden}
 .card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,0.08)}
-.card img{width:100%;height:320px;object-fit:cover;border-radius:18px}
+.card img{width:100%;height:380px;object-fit:cover;border-radius:18px;background:#fff}
 .badge{position:absolute;top:20px;left:20px;background:white;padding:6px 12px;border-radius:999px;font-size:10px;font-weight:700;letter-spacing:1px}
 .badge.bq{background:var(--ocean);color:white}
 .card h3{margin:14px 10px 4px;font-size:18px}
@@ -57,78 +56,83 @@ footer{background:var(--black);color:#9A9A9A;text-align:center;padding:24px;font
     <a href="checkout.html" class="cart-link">🛒 Cart (<span id="cartCount">0</span>)</a>
   </div>
 </header>
-<div class="banner">STYLE THAT SPEAKS. <b>BOUQUETS THAT TOUCH.</b> — 📞 071 252 1290</div>
+<div class="banner">REAL AZ COASTAL PHOTOS • <b>STYLE THAT SPEAKS.</b> — 📞 071 252 1290</div>
 <div class="hero">
   <div>
-    <h1>Style that<br>speaks.<br><span style="color:var(--ocean);font-style:italic">Bouquets that<br>touch.</span></h1>
-    <p>AZ COASTAL — Coastal-inspired women's dresses & fresh hand-tied bouquets. Designed in Durban. Loved across SA. Pay on delivery.</p>
+    <h1>Real dresses.<br><span style="color:var(--ocean);font-style:italic">Real AZ COASTAL.</span></h1>
+    <p>AZ COASTAL — All photos are real stock from Durban with AZ COASTAL tag. 15 Colors Available • All Sizes S to 36 • Pay on delivery.</p>
     <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
       <a href="tel:+27712521290" style="background:var(--black);color:white;padding:12px 20px;border-radius:999px;text-decoration:none;font-weight:700;font-size:12px">📞 Call: 071 252 1290</a>
       <a href="https://wa.me/27712521290?text=Hi%20AZ%20COASTAL!%20🌊" target="_blank" style="background:var(--ocean);color:white;padding:12px 20px;border-radius:999px;text-decoration:none;font-weight:700;font-size:12px">💬 WhatsApp Us</a>
     </div>
   </div>
-  <div class="hero-card"><img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=800" alt="AZ Coastal"></div>
+  <div class="hero-card"><img src="dress1.jpg" alt="AZ Coastal Real"></div>
 </div>
-<div class="search-wrap"><input type="text" id="searchInput" onkeyup="searchProducts()" placeholder="Search AZ COASTAL — e.g. Black Dress, Rose Bouquet"></div>
+<div class="search-wrap"><input type="text" id="searchInput" onkeyup="searchProducts()" placeholder="Search AZ COASTAL — e.g. Red Dress, Burgundy"></div>
 <div class="cats">
   <button class="cat-btn active" onclick="filterCategory('all')">All</button>
   <button class="cat-btn" onclick="filterCategory('women')">Dresses</button>
   <button class="cat-btn bouquet" onclick="filterCategory('bouquet')">Bouquets 💐</button>
-  <button class="cat-btn" onclick="filterCategory('perfume')">Perfume</button>
 </div>
 <div class="container">
-  <!-- DRESS 1 - NOW WITH MANY COLORS -->
-  <div class="card" data-name="Coastal Black Dress" data-price="R550" data-category="women">
-    <span class="badge">BEST SELLER</span><img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=600">
-    <h3>Coastal Black Dress</h3><p class="price">R550</p>
+  <!-- 1 - BEIGE PLAID - dress1.jpg -->
+  <div class="card" data-name="Beige Plaid Combo Dress" data-price="R550" data-category="women">
+    <span class="badge">REAL PHOTO</span><img src="dress1.jpg" alt="Beige Plaid">
+    <h3>Beige Plaid Combo Dress</h3><p class="price">R550</p>
     <select class="option-select"><option value="">Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>26</option><option>28</option><option>30</option><option>32</option><option>34</option><option>36</option></select>
-    <select class="option-select">
-      <option value="">Select Color</option>
-      <option>Black</option>
-      <option>White</option>
-      <option>Sand</option>
-      <option>Beige</option>
-      <option>Ocean Blue</option>
-      <option>Navy Blue</option>
-      <option>Red</option>
-      <option>Burgundy / Wine</option>
-      <option>Emerald Green</option>
-      <option>Olive Green</option>
-      <option>Blush Pink</option>
-      <option>Dusty Pink</option>
-      <option>Mustard Yellow</option>
-      <option>Lavender</option>
-      <option>Chocolate Brown</option>
-    </select>
+    <select class="option-select"><option value="">Select Color</option><option>Black</option><option>White</option><option>Sand</option><option>Beige</option><option>Ocean Blue</option><option>Navy Blue</option><option>Red</option><option>Burgundy / Wine</option><option>Emerald Green</option><option>Olive Green</option><option>Blush Pink</option><option>Dusty Pink</option><option>Mustard Yellow</option><option>Lavender</option><option>Chocolate Brown</option></select>
     <button class="btn" onclick="addToCart(this)">Add to Cart — R550</button>
   </div>
-
-  <!-- DRESS 2 - NOW WITH MANY COLORS -->
-  <div class="card" data-name="Floral Coastal Dress" data-price="R480" data-category="women">
-    <span class="badge">NEW IN</span><img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?q=80&w=600">
-    <h3>Floral Coastal Dress</h3><p class="price">R480</p>
+  <!-- 2 - BLACK RUFFLE - dress2.jpg -->
+  <div class="card" data-name="Black Ruffle Check Dress" data-price="R580" data-category="women">
+    <span class="badge">REAL PHOTO</span><img src="dress2.jpg" alt="Black Ruffle">
+    <h3>Black Ruffle Check Dress</h3><p class="price">R580</p>
     <select class="option-select"><option value="">Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>26</option><option>28</option><option>30</option><option>32</option><option>34</option><option>36</option></select>
-    <select class="option-select">
-      <option value="">Select Color</option>
-      <option>Black</option>
-      <option>White</option>
-      <option>Coastal Pink</option>
-      <option>Sea Blue</option>
-      <option>Sand</option>
-      <option>Red</option>
-      <option>Burgundy</option>
-      <option>Emerald Green</option>
-      <option>Navy Blue</option>
-      <option>Blush Pink</option>
-      <option>Mustard</option>
-      <option>Lavender</option>
-      <option>Brown</option>
-      <option>Ocean Blue</option>
-      <option>Olive</option>
-    </select>
-    <button class="btn" onclick="addToCart(this)">Add to Cart — R480</button>
+    <select class="option-select"><option value="">Select Color</option><option>Black</option><option>White</option><option>Sand</option><option>Beige</option><option>Ocean Blue</option><option>Navy Blue</option><option>Red</option><option>Burgundy</option><option>Emerald Green</option><option>Olive Green</option><option>Blush Pink</option><option>Dusty Pink</option><option>Mustard Yellow</option><option>Lavender</option><option>Chocolate Brown</option></select>
+    <button class="btn" onclick="addToCart(this)">Add to Cart — R580</button>
+  </div>
+  <!-- 3 - BURGUNDY - dress3.jpg -->
+  <div class="card" data-name="Burgundy Ruffle Sleeve Dress" data-price="R520" data-category="women">
+    <span class="badge">BEST SELLER</span><img src="dress3.jpg" alt="Burgundy">
+    <h3>Burgundy Ruffle Sleeve Dress</h3><p class="price">R520</p>
+    <select class="option-select"><option value="">Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>26</option><option>28</option><option>30</option><option>32</option><option>34</option><option>36</option></select>
+    <select class="option-select"><option value="">Select Color</option><option>Burgundy / Wine</option><option>Black</option><option>White</option><option>Sand</option><option>Beige</option><option>Ocean Blue</option><option>Navy Blue</option><option>Red</option><option>Emerald Green</option><option>Olive Green</option><option>Blush Pink</option><option>Dusty Pink</option><option>Mustard Yellow</option><option>Lavender</option><option>Chocolate Brown</option></select>
+    <button class="btn" onclick="addToCart(this)">Add to Cart — R520</button>
+  </div>
+  <!-- 4 - ORANGE PAISLEY - dress4.jpg -->
+  <div class="card" data-name="Orange Paisley Kaftan Dress" data-price="R600" data-category="women">
+    <span class="badge">LUXURY COASTAL</span><img src="dress4.jpg" alt="Orange Paisley">
+    <h3>Orange Paisley Kaftan Dress</h3><p class="price">R600</p>
+    <select class="option-select"><option value="">Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>26</option><option>28</option><option>30</option><option>32</option><option>34</option><option>36</option></select>
+    <select class="option-select"><option value="">Select Color</option><option>Orange</option><option>Black</option><option>White</option><option>Sand</option><option>Beige</option><option>Ocean Blue</option><option>Navy Blue</option><option>Red</option><option>Burgundy</option><option>Emerald Green</option><option>Olive Green</option><option>Blush Pink</option><option>Dusty Pink</option><option>Mustard Yellow</option><option>Lavender</option></select>
+    <button class="btn" onclick="addToCart(this)">Add to Cart — R600</button>
+  </div>
+  <!-- 5 - GREY FLORAL - dress5.jpg -->
+  <div class="card" data-name="Grey Floral Button Dress" data-price="R550" data-category="women">
+    <span class="badge">REAL PHOTO</span><img src="dress5.jpg" alt="Grey Floral">
+    <h3>Grey Floral Button Dress</h3><p class="price">R550</p>
+    <select class="option-select"><option value="">Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>26</option><option>28</option><option>30</option><option>32</option><option>34</option><option>36</option></select>
+    <select class="option-select"><option value="">Select Color</option><option>Grey Floral</option><option>Black</option><option>White</option><option>Sand</option><option>Beige</option><option>Ocean Blue</option><option>Navy Blue</option><option>Red</option><option>Burgundy</option><option>Emerald Green</option><option>Olive Green</option><option>Blush Pink</option><option>Mustard Yellow</option><option>Lavender</option><option>Chocolate Brown</option></select>
+    <button class="btn" onclick="addToCart(this)">Add to Cart — R550</button>
+  </div>
+  <!-- 6 - BLUE FLORAL - dress6.jpg -->
+  <div class="card" data-name="Blue Floral Maxi Dress" data-price="R580" data-category="women">
+    <span class="badge">NEW IN</span><img src="dress6.jpg" alt="Blue Floral">
+    <h3>Blue Floral Maxi Dress</h3><p class="price">R580</p>
+    <select class="option-select"><option value="">Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>26</option><option>28</option><option>30</option><option>32</option><option>34</option><option>36</option></select>
+    <select class="option-select"><option value="">Select Color</option><option>Blue Floral</option><option>Black</option><option>White</option><option>Sand</option><option>Beige</option><option>Ocean Blue</option><option>Navy Blue</option><option>Red</option><option>Burgundy</option><option>Emerald Green</option><option>Olive Green</option><option>Blush Pink</option><option>Dusty Pink</option><option>Lavender</option></select>
+    <button class="btn" onclick="addToCart(this)">Add to Cart — R580</button>
+  </div>
+  <!-- 7 - RED WRAP - dress7.jpg -->
+  <div class="card" data-name="Red Wrap Coastal Dress" data-price="R520" data-category="women">
+    <span class="badge">BEST SELLER</span><img src="dress7.jpg" alt="Red Wrap">
+    <h3>Red Wrap Coastal Dress</h3><p class="price">R520</p>
+    <select class="option-select"><option value="">Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>26</option><option>28</option><option>30</option><option>32</option><option>34</option><option>36</option></select>
+    <select class="option-select"><option value="">Select Color</option><option>Red</option><option>Black</option><option>White</option><option>Sand</option><option>Beige</option><option>Ocean Blue</option><option>Navy Blue</option><option>Burgundy / Wine</option><option>Emerald Green</option><option>Olive Green</option><option>Blush Pink</option><option>Dusty Pink</option><option>Mustard Yellow</option><option>Lavender</option><option>Chocolate Brown</option></select>
+    <button class="btn" onclick="addToCart(this)">Add to Cart — R520</button>
   </div>
 
+  <!-- Bouquets -->
   <div class="card" data-name="AZ Red Rose Bouquet" data-price="R350" data-category="bouquet">
     <span class="badge bq">FRESH TODAY</span><img src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?q=80&w=600">
     <h3>AZ Red Rose Bouquet</h3><p class="price" style="color:var(--ocean)">R350</p>
@@ -144,7 +148,7 @@ footer{background:var(--black);color:#9A9A9A;text-align:center;padding:24px;font
     <button class="btn bq-btn" onclick="addToCart(this)">Add Bouquet — R450</button>
   </div>
 </div>
-<div class="trust"><h2 style="margin:0">Why Women Love AZ COASTAL</h2><p style="color:#667085;font-size:13px;margin-top:6px">15 Colors Available • All Sizes S to 36 • Style that speaks. Bouquets that touch. • Call: 071 252 1290</p></div>
+<div class="trust"><h2 style="margin:0">Why Women Love AZ COASTAL</h2><p style="color:#667085;font-size:13px;margin-top:6px">Real Photos • 15 Colors Locked • All Sizes S to 36 • Style that speaks. Bouquets that touch. • Call: 071 252 1290</p></div>
 <footer>© 2026 AZ COASTAL • 📞 071 252 1290 • WhatsApp: 071 252 1290<br>STYLE THAT SPEAKS. BOUQUETS THAT TOUCH.<br><br>Built by WiseWeb • 067 127 1038</footer>
 <button id="backToTopBtn" onclick="topFunction()">↑</button>
 <a href="https://wa.me/27712521290?text=Hi%20AZ%20COASTAL!%20I%20need%20help%20🌊" class="whatsapp-float" target="_blank">💬</a>
@@ -177,4 +181,5 @@ window.onscroll=()=>{document.getElementById("backToTopBtn").style.display=(wind
 function topFunction(){window.scrollTo({top:0,behavior:'smooth'})}
 updateCartCount();
 </script>
-</html>
+</body>
+  </html>

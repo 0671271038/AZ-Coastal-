@@ -20,15 +20,20 @@ header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid 
 .price-bar h2{margin:0;font-size:26px}.price-bar p{color:#667085;font-size:12px;margin:6px 0 0}
 .grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;padding:18px}
 .card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;text-align:center;padding-bottom:12px}
-.card img{width:100%;height:260px;object-fit:cover}
+.card img{width:100%;height:260px;object-fit:cover;cursor:zoom-in}
 .card h3{font-size:14px;margin:10px 8px 6px;min-height:32px}
 .price{background:#101828;color:#fff;display:inline-block;padding:6px 14px;border-radius:999px;font-weight:700;font-size:13px;margin-bottom:10px}
 .btn-wa{background:var(--wa);color:#fff;text-decoration:none;display:block;margin:0 10px;padding:11px;border-radius:999px;font-weight:700;font-size:12px}
 .section{max-width:1200px;margin:20px auto 0;padding:20px 18px 0;text-align:center}
 .section h2{font-size:30px;margin:0}
 .bouquet-feature{max-width:1000px;margin:30px auto;background:#fff;border-radius:24px;overflow:hidden;border:1px solid var(--line);box-shadow:0 12px 30px rgba(0,0,0,0.06)}
-.bouquet-feature img{width:100%;height:auto;display:block}
+.bouquet-feature img{width:100%;height:auto;display:block;cursor:zoom-in}
 .bouquet-info{padding:20px;text-align:center}
+/* LIGHTBOX - ADDED ONLY THIS */
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.92);display:none;align-items:center;justify-content:center;z-index:9999;padding:20px}
+#lightbox.active{display:flex}
+#lightbox img{max-width:95vw;max-height:90vh;border-radius:12px;object-fit:contain}
+#lightbox .close{position:absolute;top:18px;right:20px;color:#fff;font-size:34px;font-weight:700;cursor:pointer;line-height:1}
 </style>
 </head>
 <body>
@@ -77,5 +82,23 @@ header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid 
   <div style="margin-top:14px">📍 783 Ohlange, Durban • 📞 071 252 1290 • 📧 Zanele.a.mdletshe@gmail.com<br><span style="color:#C8A46A">Dresses R200-R1000 • Perfumes R150-R200 • Bouquets Custom</span></div>
   <div style="border-top:1px solid rgba(255,255,255,0.1);margin-top:18px;padding-top:12px;font-size:10px;color:#7A8699">© 2026 AZ COASTAL • Built by WiseWeb 067 127 1038</div>
 </footer>
+
+<!-- LIGHTBOX HTML -->
+<div id="lightbox"><span class="close">&times;</span><img id="lightbox-img" src=""></div>
+<script>
+const lightbox=document.getElementById('lightbox');
+const lbImg=document.getElementById('lightbox-img');
+document.querySelectorAll('.card img, .bouquet-feature img').forEach(img=>{
+  img.addEventListener('click',()=>{
+    lbImg.src=img.src;
+    lightbox.classList.add('active');
+  });
+});
+lightbox.addEventListener('click',(e)=>{
+  if(e.target===lightbox || e.target.classList.contains('close')){
+    lightbox.classList.remove('active');
+  }
+});
+</script>
 </body>
-                                                                                                             </html>
+</html>

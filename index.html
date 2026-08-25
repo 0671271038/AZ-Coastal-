@@ -10,12 +10,14 @@
 *{box-sizing:border-box} body{font-family:'Poppins',sans-serif;margin:0;background:var(--bg);color:var(--black)}
 h1,h2,h3{font-family:'Playfair Display',serif}
 header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:12px 20px;display:flex;justify-content:space-between;align-items:center}
-.logo{font-family:'Playfair Display';font-weight:800;font-size:20px;letter-spacing:2px}.logo small{display:block;font-family:'Poppins';font-size:9px;letter-spacing:3px;color:var(--gold)}
+.logo-wrap{display:flex;align-items:center;gap:12px}
+.logo-img{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--line);box-shadow:0 4px 12px rgba(0,0,0,0.1)}
+.logo{font-family:'Playfair Display';font-weight:800;font-size:20px;letter-spacing:2px;line-height:1}
+.logo small{display:block;font-family:'Poppins';font-size:9px;letter-spacing:3px;color:var(--gold);margin-top:2px}
 .cart-link{background:var(--black);color:white;padding:10px 16px;border-radius:999px;text-decoration:none;font-weight:700;font-size:12px}
 .banner{background:var(--ocean);color:#fff;text-align:center;padding:10px;font-size:11px;letter-spacing:2px;font-weight:600}
 .price-range{background:white;border-bottom:1px solid var(--line);text-align:center;padding:22px 20px}
-.price-range h2{margin:0;font-size:28px;letter-spacing:1px}
-.price-range p{margin:6px 0 0;color:#667085;font-size:13px}
+.price-range h2{margin:0;font-size:28px}.price-range p{margin:6px 0 0;color:#667085;font-size:13px}
 .container{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:22px;padding:20px 24px}
 .card{background:white;border:1px solid var(--line);border-radius:24px;padding:12px 12px 16px;box-shadow:0 12px 30px rgba(0,0,0,0.04);position:relative}
 .card img{width:100%;height:420px;object-fit:cover;border-radius:18px;background:white}
@@ -26,90 +28,26 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.92);backd
 </style>
 </head>
 <body>
-<header><div class="logo">AZ COASTAL<small>STYLE THAT SPEAKS</small></div><a href="checkout.html" class="cart-link">🛒 Cart (<span id="cartCount">0</span>)</a></header>
+<header>
+  <div class="logo-wrap">
+    <img src="az_logo_round.png" alt="AZ COASTAL Logo" class="logo-img">
+    <div class="logo">AZ COASTAL<small>STYLE THAT SPEAKS</small></div>
+  </div>
+  <a href="checkout.html" class="cart-link">🛒 Cart (<span id="cartCount">0</span>)</a>
+</header>
 <div class="banner">100% REAL AZ COASTAL PHOTOS — DURBAN</div>
-
-<!-- NEW PRICE RANGE ON TOP -->
 <div class="price-range">
   <h2>From R200 - R1000</h2>
   <p>All Dresses • Real AZ COASTAL Stock • Sizes S to 36 • 15 Colors Available</p>
 </div>
-
 <div class="container">
-
-  <div class="card" data-name="Taupe and Brown Plaid Dress" data-category="women">
-    <span class="badge">REAL - TAUPE/BROWN</span><img src="dress1.jpg">
-    <h3>Taupe & Brown Plaid Combo Dress</h3>
-    <select class="option-select"><option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>26</option><option>28</option><option>30</option><option>32</option><option>34</option><option>36</option></select>
-    <select class="option-select"><option>Select Color - 15 options</option><option>As Pictured - Taupe/Brown Plaid</option><option>Black</option><option>White</option><option>Sand</option><option>Beige</option><option>Ocean Blue</option><option>Navy Blue</option><option>Red</option><option>Burgundy</option><option>Emerald Green</option><option>Olive Green</option><option>Blush Pink</option><option>Mustard Yellow</option><option>Lavender</option><option>Chocolate Brown</option></select>
-    <button class="btn" onclick="addToCart(this)">Add to Cart</button>
-  </div>
-
-  <div class="card" data-name="Black and White Check Ruffle Dress" data-category="women">
-    <span class="badge">REAL - BLACK/WHITE</span><img src="dress2.jpg">
-    <h3>Black & White Check Ruffle Dress</h3>
-    <select class="option-select"><option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>26-36</option></select>
-    <select class="option-select"><option>Select Color</option><option>As Pictured - Black/White Check</option><option>Black</option><option>White</option><option>Beige</option><option>Red</option><option>Burgundy</option><option>Navy</option><option>Ocean Blue</option><option>Emerald</option><option>Olive</option><option>Blush Pink</option><option>Mustard</option><option>Lavender</option><option>Chocolate Brown</option><option>Sand</option></select>
-    <button class="btn" onclick="addToCart(this)">Add to Cart</button>
-  </div>
-
-  <div class="card" data-name="Burgundy Wine Ruffle Dress" data-category="women">
-    <span class="badge">REAL - BURGUNDY</span><img src="dress3.jpg">
-    <h3>Wine Burgundy Ruffle Sleeve Dress</h3>
-    <select class="option-select"><option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>26-36</option></select>
-    <select class="option-select"><option>Select Color</option><option>As Pictured - Burgundy/Wine</option><option>Black</option><option>Red</option><option>White</option><option>Beige</option><option>Navy</option><option>Ocean Blue</option><option>Emerald</option><option>Olive</option><option>Blush Pink</option><option>Mustard</option><option>Lavender</option><option>Chocolate</option><option>Sand</option><option>Dusty Pink</option></select>
-    <button class="btn" onclick="addToCart(this)">Add to Cart</button>
-  </div>
-
-  <div class="card" data-name="Orange Black Paisley Dress" data-category="women">
-    <span class="badge">REAL - ORANGE/BLACK</span><img src="dress4.jpg">
-    <h3>Orange & Black Paisley Kaftan Dress</h3>
-    <select class="option-select"><option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>26-36</option></select>
-    <select class="option-select"><option>Select Color</option><option>As Pictured - Orange Paisley</option><option>Black</option><option>White</option><option>Beige</option><option>Red</option><option>Burgundy</option><option>Blue</option><option>Green</option><option>Pink</option><option>Mustard</option><option>Lavender</option><option>Brown</option><option>Sand</option><option>Navy</option><option>Olive</option></select>
-    <button class="btn" onclick="addToCart(this)">Add to Cart</button>
-  </div>
-
-  <div class="card" data-name="Grey Black Floral Shirt Dress" data-category="women">
-    <span class="badge">REAL - GREY FLORAL</span><img src="dress5.jpg">
-    <h3>Grey & Black Floral Shirt Dress</h3>
-    <select class="option-select"><option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>26-36</option></select>
-    <select class="option-select"><option>Select Color</option><option>As Pictured - Grey Floral</option><option>Black</option><option>White</option><option>Beige</option><option>Red</option><option>Burgundy</option><option>Blue</option><option>Green</option><option>Pink</option><option>Brown</option><option>Sand</option><option>Ocean</option><option>Navy</option><option>Mustard</option><option>Lavender</option></select>
-    <button class="btn" onclick="addToCart(this)">Add to Cart</button>
-  </div>
-
-  <div class="card" data-name="Powder Blue Floral Maxi Dress" data-category="women">
-    <span class="badge">REAL - POWDER BLUE</span><img src="dress6.jpg">
-    <h3>Powder Blue & White Floral Maxi Dress</h3>
-    <select class="option-select"><option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>26-36</option></select>
-    <select class="option-select"><option>Select Color</option><option>As Pictured - Powder Blue Floral</option><option>Black</option><option>White</option><option>Beige</option><option>Red</option><option>Burgundy</option><option>Blue</option><option>Green</option><option>Pink</option><option>Brown</option><option>Sand</option><option>Ocean</option><option>Navy</option><option>Mustard</option><option>Lavender</option></select>
-    <button class="btn" onclick="addToCart(this)">Add to Cart</button>
-  </div>
-
-  <div class="card" data-name="Ruby Red Wrap Dress" data-category="women">
-    <span class="badge">REAL - RUBY RED</span><img src="dress7.jpg">
-    <h3>Ruby Red Wrap Dress</h3>
-    <select class="option-select"><option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>26-36</option></select>
-    <select class="option-select"><option>Select Color</option><option>As Pictured - Ruby Red</option><option>Black</option><option>White</option><option>Beige</option><option>Blue</option><option>Burgundy</option><option>Green</option><option>Pink</option><option>Brown</option><option>Sand</option><option>Ocean</option><option>Navy</option><option>Mustard</option><option>Lavender</option><option>Olive</option></select>
-    <button class="btn" onclick="addToCart(this)">Add to Cart</button>
-  </div>
-
+  <div class="card"><span class="badge">REAL - TAUPE/BROWN</span><img src="dress1.jpg"><h3>Taupe & Brown Plaid Combo Dress</h3><select class="option-select"><option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>26-36</option></select><select class="option-select"><option>As Pictured - Taupe/Brown Plaid</option><option>Black</option><option>White</option><option>Beige</option><option>Red</option><option>Burgundy</option><option>Blue</option><option>Green</option><option>Pink</option><option>Mustard</option><option>Lavender</option><option>Brown</option><option>Sand</option><option>Navy</option><option>Olive</option></select><button class="btn">Add to Cart</button></div>
+  <div class="card"><span class="badge">REAL - BLACK/WHITE</span><img src="dress2.jpg"><h3>Black & White Check Ruffle Dress</h3><select class="option-select"><option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XXL</option><option>26-36</option></select><select class="option-select"><option>As Pictured - Black/White Check</option><option>Black</option><option>White</option><option>Beige</option><option>Red</option><option>Burgundy</option><option>Navy</option><option>Blue</option><option>Green</option><option>Pink</option><option>Mustard</option><option>Lavender</option><option>Brown</option><option>Sand</option><option>Olive</option></select><button class="btn">Add to Cart</button></div>
+  <div class="card"><span class="badge">REAL - BURGUNDY</span><img src="dress3.jpg"><h3>Wine Burgundy Ruffle Sleeve Dress</h3><select class="option-select"><option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>26-36</option></select><select class="option-select"><option>As Pictured - Burgundy/Wine</option><option>Black</option><option>Red</option><option>White</option><option>Beige</option><option>Navy</option><option>Blue</option><option>Green</option><option>Pink</option><option>Mustard</option><option>Lavender</option><option>Brown</option><option>Sand</option><option>Olive</option><option>Dusty Pink</option></select><button class="btn">Add to Cart</button></div>
+  <div class="card"><span class="badge">REAL - ORANGE/BLACK</span><img src="dress4.jpg"><h3>Orange & Black Paisley Kaftan Dress</h3><select class="option-select"><option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>26-36</option></select><select class="option-select"><option>As Pictured - Orange Paisley</option><option>Black</option><option>White</option><option>Beige</option><option>Red</option><option>Burgundy</option><option>Blue</option><option>Green</option><option>Pink</option><option>Mustard</option><option>Lavender</option><option>Brown</option><option>Sand</option><option>Navy</option><option>Olive</option></select><button class="btn">Add to Cart</button></div>
+  <div class="card"><span class="badge">REAL - GREY FLORAL</span><img src="dress5.jpg"><h3>Grey & Black Floral Shirt Dress</h3><select class="option-select"><option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>26-36</option></select><select class="option-select"><option>As Pictured - Grey Floral</option><option>Black</option><option>White</option><option>Beige</option><option>Red</option><option>Burgundy</option><option>Blue</option><option>Green</option><option>Pink</option><option>Brown</option><option>Sand</option><option>Ocean</option><option>Navy</option><option>Mustard</option><option>Lavender</option></select><button class="btn">Add to Cart</button></div>
+  <div class="card"><span class="badge">REAL - POWDER BLUE</span><img src="dress6.jpg"><h3>Powder Blue & White Floral Maxi Dress</h3><select class="option-select"><option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>26-36</option></select><select class="option-select"><option>As Pictured - Powder Blue Floral</option><option>Black</option><option>White</option><option>Beige</option><option>Red</option><option>Burgundy</option><option>Blue</option><option>Green</option><option>Pink</option><option>Brown</option><option>Sand</option><option>Ocean</option><option>Navy</option><option>Mustard</option><option>Lavender</option></select><button class="btn">Add to Cart</button></div>
+  <div class="card"><span class="badge">REAL - RUBY RED</span><img src="dress7.jpg"><h3>Ruby Red Wrap Dress</h3><select class="option-select"><option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>26-36</option></select><select class="option-select"><option>As Pictured - Ruby Red</option><option>Black</option><option>White</option><option>Beige</option><option>Blue</option><option>Burgundy</option><option>Green</option><option>Pink</option><option>Brown</option><option>Sand</option><option>Ocean</option><option>Navy</option><option>Mustard</option><option>Lavender</option><option>Olive</option></select><button class="btn">Add to Cart</button></div>
 </div>
-<script>
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
-function updateCartCount(){document.getElementById('cartCount').innerText=cart.length}
-function addToCart(button){
-  let card=button.parentElement;
-  let name=card.getAttribute('data-name');
-  let selects=card.querySelectorAll('.option-select');
-  if(!selects[0].value.includes("Select") &&!selects[1].value.includes("Select")){
-    cart.push({name,size:selects[0].value,color:selects[1].value});
-    localStorage.setItem('cart',JSON.stringify(cart));
-    updateCartCount();
-    button.innerText="✓ Added!";
-    setTimeout(()=>{button.innerText="Add to Cart"},1200);
-  } else { alert("Please select size and color"); }
-}
-updateCartCount();
-</script>
 </body>
-      </html>
+                                                                                                                                                                                                                                                                                                                                                           </html>

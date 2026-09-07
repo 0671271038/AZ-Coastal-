@@ -16,86 +16,175 @@ header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid 
 .logo small{display:block;font-family:'Poppins';font-size:9px;letter-spacing:3px;color:var(--gold)}
 .wa-top{background:var(--wa);color:#fff;padding:10px 16px;border-radius:999px;text-decoration:none;font-weight:700;font-size:12px}
 .banner{background:var(--ocean);color:#fff;text-align:center;padding:10px;font-size:11px;letter-spacing:2px}
-.price-bar{background:#fff;text-align:center;padding:20px;border-bottom:1px solid var(--line)}
+.price-bar{background:#fff;text-align:center;padding:22px;border-bottom:1px solid var(--line)}
 .price-bar h2{margin:0;font-size:26px}.price-bar p{color:#667085;font-size:12px;margin:6px 0 0}
+.stories-wrap{background:#fff;border-bottom:1px solid var(--line);padding:16px 0 12px;overflow-x:auto}
+.stories-wrap::-webkit-scrollbar{display:none}
+.stories{display:flex;gap:16px;padding:0 16px;width:max-content}
+.story{text-align:center;cursor:pointer}
+.story-ring{width:66px;height:66px;border-radius:50%;padding:3px;background:linear-gradient(45deg,#C8A46A,#E8C99A,#9C7A3C);display:flex;align-items:center;justify-content:center}
+.story-ring div{width:100%;height:100%;background:#fff;border-radius:50%;padding:2px}
+.story-ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
+.story p{margin:6px 0 0;font-size:10px;font-weight:700;color:#333;max-width:66px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;padding:18px}
-.card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;text-align:center;padding-bottom:12px}
-.card img{width:100%;height:260px;object-fit:cover;cursor:zoom-in}
+.card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;text-align:center;padding-bottom:12px;transition:0.3s}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,0.08)}
+.card img{width:100%;height:260px;object-fit:cover;cursor:pointer}
 .card h3{font-size:14px;margin:10px 8px 6px;min-height:32px}
 .price{background:#101828;color:#fff;display:inline-block;padding:6px 14px;border-radius:999px;font-weight:700;font-size:13px;margin-bottom:10px}
 .btn-wa{background:var(--wa);color:#fff;text-decoration:none;display:block;margin:0 10px;padding:11px;border-radius:999px;font-weight:700;font-size:12px}
 .section{max-width:1200px;margin:20px auto 0;padding:20px 18px 0;text-align:center}
 .section h2{font-size:30px;margin:0}
-.bouquet-feature{max-width:1000px;margin:30px auto;background:#fff;border-radius:24px;overflow:hidden;border:1px solid var(--line);box-shadow:0 12px 30px rgba(0,0,0,0.06)}
-.bouquet-feature img{width:100%;height:auto;display:block;cursor:zoom-in}
+.bouquet-feature{max-width:1000px;margin:30px auto;background:#fff;border-radius:24px;overflow:hidden;border:1px solid var(--line)}
+.bouquet-feature img{width:100%;height:auto;display:block;cursor:pointer}
 .bouquet-info{padding:20px;text-align:center}
+.float-wa{position:fixed;right:18px;bottom:18px;width:58px;height:58px;background:var(--wa);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:26px;text-decoration:none;box-shadow:0 8px 20px rgba(37,211,102,0.4);z-index:80}
 #lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.92);display:none;align-items:center;justify-content:center;z-index:9999;padding:20px}
 #lightbox.active{display:flex}
-#lightbox img{max-width:95vw;max-height:90vh;border-radius:12px;object-fit:contain}
-#lightbox .close{position:absolute;top:18px;right:20px;color:#fff;font-size:34px;font-weight:700;cursor:pointer;line-height:1}
+#lightbox img{max-width:95vw;max-height:90vh;border-radius:12px}
+#lightbox.close{position:absolute;top:18px;right:20px;color:#fff;font-size:34px;font-weight:700;cursor:pointer}
+#storyBox{position:fixed;inset:0;background:#000;display:none;z-index:10000;flex-direction:column}
+#storyBox.active{display:flex}
+.s-top{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;color:#fff}
+.s-top-left{display:flex;align-items:center;gap:10px}
+.s-top-left img{width:36px;height:36px;border-radius:50%;border:1px solid var(--gold)}
+.s-middle{flex:1;display:flex;align-items:center;justify-content:center;position:relative;padding:10px}
+.s-middle img{max-width:100%;max-height:75vh;border-radius:10px}
+.s-tap{position:absolute;top:0;bottom:0;width:50%}
+.s-tap.l{left:0}.s-tap.r{right:0}
+.s-bottom{padding:16px;text-align:center}
+.s-bottom a{background:#fff;color:#000;padding:13px 26px;border-radius:999px;text-decoration:none;font-weight:800;font-size:13px;display:inline-block}
+.s-progress{display:flex;gap:4px;padding:8px 10px}
+.s-progress div{flex:1;height:3px;background:rgba(255,255,255,0.3);border-radius:999px}
+.s-progress div i{display:block;height:100%;background:#fff;width:0%}
 </style>
 </head>
 <body>
 <header>
   <div class="logo-wrap"><img src="logo.jpg" class="logo-img"><div class="logo">AZ COASTAL<small>STYLE THAT SPEAKS. BOUQUETS THAT TOUCH</small></div></div>
-  <a href="https://wa.me/27712521290" class="wa-top">💬 WhatsApp</a>
+  <a href="https://wa.me/27712521290" class="wa-top">WhatsApp</a>
 </header>
 <div class="banner">REAL AZ COASTAL PHOTOS • DURBAN • 738 OHLANGE</div>
+
+<div class="stories-wrap">
+  <div class="stories">
+    <div class="story" data-img="dress1.jpg" data-text="Plaid Dress R200-R1000"><div class="story-ring"><div><img src="dress1.jpg"></div></div><p>Plaid</p></div>
+    <div class="story" data-img="dress2.jpg" data-text="Check Dress"><div class="story-ring"><div><img src="dress2.jpg"></div></div><p>Check</p></div>
+    <div class="story" data-img="dress3.jpg" data-text="Burgundy Dress"><div class="story-ring"><div><img src="dress3.jpg"></div></div><p>Burgundy</p></div>
+    <div class="story" data-img="dress4.jpg" data-text="Paisley Dress"><div class="story-ring"><div><img src="dress4.jpg"></div></div><p>Paisley</p></div>
+    <div class="story" data-img="dress5.jpg" data-text="Floral Dress"><div class="story-ring"><div><img src="dress5.jpg"></div></div><p>Floral</p></div>
+    <div class="story" data-img="dress6.jpg" data-text="Blue Maxi"><div class="story-ring"><div><img src="dress6.jpg"></div></div><p>Blue Maxi</p></div>
+    <div class="story" data-img="poster.jpg" data-text="Bouquets That Touch"><div class="story-ring"><div><img src="poster.jpg"></div></div><p>Bouquets</p></div>
+    <div class="story" data-img="1.jpg" data-text="Perfumes R150"><div class="story-ring"><div><img src="1.jpg"></div></div><p>Perfumes</p></div>
+  </div>
+</div>
+
 <div class="price-bar"><h2>Dresses From R200 - R1000</h2><p>100% Real Stock • All Sizes Available</p></div>
 
 <div class="grid">
-  <div class="card"><img src="dress1.jpg"><h3>Taupe & Brown Plaid Dress</h3><div class="price">R200 - R1000</div><div style="font-size:12px;font-weight:700;margin:0 0 10px;color:#667085">Size: Medium</div><a class="btn-wa" href="https://wa.me/27712521290?text=Hi%20AZ%20COASTAL%2C%20I%20want%20Taupe%20Brown%20Plaid%20Dress%20Size%20Medium">💬 Order on WhatsApp</a></div>
-  <div class="card"><img src="dress2.jpg"><h3>Black & White Check Dress</h3><div class="price">R200 - R1000</div><div style="font-size:12px;font-weight:700;margin:0 0 10px;color:#667085">Size: XLarge</div><a class="btn-wa" href="https://wa.me/27712521290?text=Hi%20I%20want%20Black%20White%20Check%20Dress%20Size%20XLarge">💬 Order on WhatsApp</a></div>
-  <div class="card"><img src="dress3.jpg"><h3>Wine Burgundy Dress</h3><div class="price">R200 - R1000</div><div style="font-size:12px;font-weight:700;margin:0 0 10px;color:#667085">Size: Medium</div><a class="btn-wa" href="https://wa.me/27712521290?text=Hi%20I%20want%20Burgundy%20Dress%20Size%20Medium">💬 Order on WhatsApp</a></div>
-  <div class="card"><img src="dress4.jpg"><h3>Orange Paisley Dress</h3><div class="price">R200 - R1000</div><div style="font-size:12px;font-weight:700;margin:0 0 10px;color:#667085">Size: Large</div><a class="btn-wa" href="https://wa.me/27712521290?text=Hi%20I%20want%20Orange%20Paisley%20Dress%20Size%20Large">💬 Order on WhatsApp</a></div>
-  <div class="card"><img src="dress5.jpg"><h3>Grey Floral Dress</h3><div class="price">R200 - R1000</div><div style="font-size:12px;font-weight:700;margin:0 0 10px;color:#667085">Size: Medium</div><a class="btn-wa" href="https://wa.me/27712521290?text=Hi%20I%20want%20Grey%20Floral%20Dress%20Size%20Medium">💬 Order on WhatsApp</a></div>
-  <div class="card"><img src="dress6.jpg"><h3>Powder Blue Maxi</h3><div class="price">R200 - R1000</div><div style="font-size:12px;font-weight:700;margin:0 0 10px;color:#667085">Size: Medium</div><a class="btn-wa" href="https://wa.me/27712521290?text=Hi%20I%20want%20Powder%20Blue%20Dress%20Size%20Medium">💬 Order on WhatsApp</a></div>
-  <div class="card"><img src="dress7.jpg"><h3>Ruby Red Wrap Dress</h3><div class="price">R200 - R1000</div><div style="font-size:12px;font-weight:700;margin:0 0 10px;color:#667085">Size: Medium</div><a class="btn-wa" href="https://wa.me/27712521290?text=Hi%20I%20want%20Ruby%20Red%20Dress%20Size%20Medium">💬 Order on WhatsApp</a></div>
+  <div class="card"><img src="dress1.jpg"><h3>Taupe & Brown Plaid Dress</h3><div class="price">R200 - R1000</div><div style="font-size:12px;font-weight:700;margin:0 0 10px;color:#667085">Size: Medium</div><a class="btn-wa" href="https://wa.me/27712521290?text=Hi%20AZ%20COASTAL%2C%20I%20want%20Taupe%20Brown%20Plaid%20Dress%20Size%20Medium">Order on WhatsApp</a></div>
+  <div class="card"><img src="dress2.jpg"><h3>Black & White Check Dress</h3><div class="price">R200 - R1000</div><div style="font-size:12px;font-weight:700;margin:0 0 10px;color:#667085">Size: XLarge</div><a class="btn-wa" href="https://wa.me/27712521290?text=Hi%20I%20want%20Black%20White%20Check%20Dress%20Size%20XLarge">Order on WhatsApp</a></div>
+  <div class="card"><img src="dress3.jpg"><h3>Wine Burgundy Dress</h3><div class="price">R200 - R1000</div><div style="font-size:12px;font-weight:700;margin:0 0 10px;color:#667085">Size: Medium</div><a class="btn-wa" href="https://wa.me/27712521290?text=Hi%20I%20want%20Burgundy%20Dress%20Size%20Medium">Order on WhatsApp</a></div>
+  <div class="card"><img src="dress4.jpg"><h3>Orange Paisley Dress</h3><div class="price">R200 - R1000</div><div style="font-size:12px;font-weight:700;margin:0 0 10px;color:#667085">Size: Large</div><a class="btn-wa" href="https://wa.me/27712521290?text=Hi%20I%20want%20Orange%20Paisley%20Dress%20Size%20Large">Order on WhatsApp</a></div>
+  <div class="card"><img src="dress5.jpg"><h3>Grey Floral Dress</h3><div class="price">R200 - R1000</div><div style="font-size:12px;font-weight:700;margin:0 0 10px;color:#667085">Size: Medium</div><a class="btn-wa" href="https://wa.me/27712521290?text=Hi%20I%20want%20Grey%20Floral%20Dress%20Size%20Medium">Order on WhatsApp</a></div>
+  <div class="card"><img src="dress6.jpg"><h3>Powder Blue Maxi</h3><div class="price">R200 - R1000</div><div style="font-size:12px;font-weight:700;margin:0 0 10px;color:#667085">Size: Medium</div><a class="btn-wa" href="https://wa.me/27712521290?text=Hi%20I%20want%20Powder%20Blue%20Dress%20Size%20Medium">Order on WhatsApp</a></div>
+  <div class="card"><img src="dress7.jpg"><h3>Ruby Red Wrap Dress</h3><div class="price">R200 - R1000</div><div style="font-size:12px;font-weight:700;margin:0 0 10px;color:#667085">Size: Medium</div><a class="btn-wa" href="https://wa.me/27712521290?text=Hi%20I%20want%20Ruby%20Red%20Dress%20Size%20Medium">Order on WhatsApp</a></div>
 </div>
 
-<div class="section"><h2>💐 Bouquets That Touch</h2><p style="color:#667085;font-size:13px">Gifts for Someone Special • Durban Delivery</p></div>
+<div class="section"><h2>Bouquets That Touch</h2><p style="color:#667085;font-size:13px">Gifts for Someone Special • Durban Delivery</p></div>
 <div style="max-width:1200px;margin:0 auto;padding:0 18px">
   <div class="bouquet-feature">
-    <img src="poster.jpg" alt="AZ Coastal Bouquets - Zanele Dladla">
+    <img src="poster.jpg" alt="AZ Coastal Bouquets">
     <div class="bouquet-info">
       <h3 style="margin:0;font-size:22px">NICE FEMALE BOUTIQUE • BOUQUET • FEMALE CLOTHING</h3>
       <p style="color:#667085;font-size:13px;margin:8px 0 14px">Dresses • Bouquets • Perfumes • Thoughtful bouquets to express love, joy and celebration</p>
-      <a class="btn-wa" style="max-width:300px;margin:0 auto" href="https://wa.me/27712521290?text=Hi%20AZ%20COASTAL%2C%20I%20want%20to%20order%20a%20bouquet%20%F0%9F%92%90">💐 Order Bouquet on WhatsApp</a>
+      <a class="btn-wa" style="max-width:300px;margin:0 auto" href="https://wa.me/27712521290?text=Hi%20AZ%20COASTAL%2C%20I%20want%20to%20order%20a%20bouquet">Order Bouquet on WhatsApp</a>
     </div>
   </div>
 </div>
 
 <div class="section"><h2>Perfumes</h2><p style="color:#667085;font-size:13px">Best Sellers This Year</p></div>
 <div class="grid">
-  <div class="card"><img src="1.jpg" style="height:200px"><h3>ACQUA S-LONCE</h3><div class="price">R150-R200</div><a class="btn-wa" href="https://wa.me/27712521290?text=Hi%20I%20want%20ACQUA%20R150">💬 Order on WhatsApp</a></div>
-  <div class="card"><img src="2.jpg" style="height:200px"><h3>MIAO MIEE</h3><div class="price">R150-R200</div><a class="btn-wa" href="https://wa.me/27712521290?text=Hi%20I%20want%20MIAO%20MIEE%20R200">💬 Order on WhatsApp</a></div>
-  <div class="card"><img src="3.jpg" style="height:200px"><h3>DEAR GIRL</h3><div class="price">R150-R200</div><a class="btn-wa" href="https://wa.me/27712521290?text=Hi%20I%20want%20DEAR%20GIRL%20R150">💬 Order on WhatsApp</a></div>
-  <div class="card"><img src="4.jpg" style="height:200px"><h3>PINK CHARMING</h3><div class="price">R150-R200</div><a class="btn-wa" href="https://wa.me/27712521290?text=Hi%20I%20want%20PINK%20R150">💬 Order on WhatsApp</a></div>
+  <div class="card"><img src="1.jpg" style="height:200px"><h3>ACQUA S-LONCE</h3><div class="price">R150-R200</div><a class="btn-wa" href="https://wa.me/27712521290?text=Hi%20I%20want%20ACQUA%20R150">Order on WhatsApp</a></div>
+  <div class="card"><img src="2.jpg" style="height:200px"><h3>MIAO MIEE</h3><div class="price">R150-R200</div><a class="btn-wa" href="https://wa.me/27712521290?text=Hi%20I%20want%20MIAO%20MIEE%20R200">Order on WhatsApp</a></div>
+  <div class="card"><img src="3.jpg" style="height:200px"><h3>DEAR GIRL</h3><div class="price">R150-R200</div><a class="btn-wa" href="https://wa.me/27712521290?text=Hi%20I%20want%20DEAR%20GIRL%20R150">Order on WhatsApp</a></div>
+  <div class="card"><img src="4.jpg" style="height:200px"><h3>PINK CHARMING</h3><div class="price">R150-R200</div><a class="btn-wa" href="https://wa.me/27712521290?text=Hi%20I%20want%20PINK%20R150">Order on WhatsApp</a></div>
 </div>
 
 <footer style="background:#0A1931;color:#B8C2D0;text-align:center;padding:30px 20px;margin-top:30px;font-size:12px;line-height:1.9">
   <img src="az.jpg" style="width:64px;height:64px;border-radius:50%;border:2px solid #C8A46A;margin-bottom:10px">
-  <div style="color:#fff;font-weight:800;font-size:18px;letter-spacing:2px;font-family:'Playfair Display'">Owned by <p>Zanele Dladla</p></div>
+  <div style="color:#fff;font-weight:800;font-size:18px;letter-spacing:2px;font-family:'Playfair Display'">Owned by <p style="margin:0">Zanele Dladla</p></div>
   <div style="color:#C8A46A;font-size:10px;letter-spacing:3px">STYLE THAT SPEAKS. BOUQUETS THAT TOUCH.</div>
   <div style="margin-top:14px">📍 738 Ohlange, Durban • 📞 071 252 1290 • 📧 Zanele.a.mdletshe@gmail.com<br><span style="color:#C8A46A">Dresses R200-R1000 • Perfumes R150-R200 • Bouquets Custom</span></div>
-  <div style="border-top:1px solid rgba(255,255,255,0.1);margin-top:18px;padding-top:12px;font-size:10px;color:#7A8699">© 2026 AZ COASTAL • Built by WiseWeb 067 127 1038</div>
+  <div style="border-top:1px solid rgba(255,255,255,0.1);margin-top:18px;padding-top:12px;font-size:10px;color:#7A8699">© 2026 AZ COASTAL • Built by PoisnWeb-0671271038</div>
 </footer>
 
+<a href="https://wa.me/27712521290" class="float-wa">💬</a>
+
 <div id="lightbox"><span class="close">&times;</span><img id="lightbox-img" src=""></div>
+
+<div id="storyBox">
+  <div class="s-progress" id="sProgress"></div>
+  <div class="s-top">
+    <div class="s-top-left"><img src="logo.jpg"><div><div style="font-weight:700;font-size:13px">AZ COASTAL</div><div style="font-size:11px;opacity:0.7" id="sText">Dresses</div></div></div>
+    <div style="font-size:32px;cursor:pointer" id="sClose">&times;</div>
+  </div>
+  <div class="s-middle">
+    <div class="s-tap l" id="sPrev"></div>
+    <img id="sImg" src="">
+    <div class="s-tap r" id="sNext"></div>
+  </div>
+  <div class="s-bottom"><a id="sWa" href="https://wa.me/27712521290" target="_blank">Order on WhatsApp</a></div>
+</div>
+
 <script>
-const lightbox=document.getElementById('lightbox');
-const lbImg=document.getElementById('lightbox-img');
-document.querySelectorAll('.card img, .bouquet-feature img').forEach(img=>{
-  img.addEventListener('click',()=>{
-    lbImg.src=img.src;
-    lightbox.classList.add('active');
+var lightbox=document.getElementById('lightbox');
+var lbImg=document.getElementById('lightbox-img');
+document.querySelectorAll('.card img,.bouquet-feature img').forEach(function(img){
+  img.addEventListener('click',function(){
+    if(document.getElementById('storyBox').classList.contains('active')) return;
+    lbImg.src=img.src; lightbox.classList.add('active');
   });
 });
-lightbox.addEventListener('click',(e)=>{
-  if(e.target===lightbox || e.target.classList.contains('close')){
-    lightbox.classList.remove('active');
-  }
+lightbox.addEventListener('click',function(e){
+  if(e.target===lightbox || e.target.classList.contains('close')){ lightbox.classList.remove('active'); }
 });
+
+var stories=document.querySelectorAll('.story');
+var box=document.getElementById('storyBox');
+var sImg=document.getElementById('sImg');
+var sText=document.getElementById('sText');
+var sWa=document.getElementById('sWa');
+var sProgress=document.getElementById('sProgress');
+var cur=0; var tm=null; var pr=0;
+
+function openStory(n){
+  cur=n; showStory(); box.classList.add('active'); startBar();
+}
+function showStory(){
+  var d=stories[cur];
+  sImg.src=d.getAttribute('data-img');
+  sText.textContent=d.getAttribute('data-text');
+  sWa.href='https://wa.me/27712521290?text=Hi%20I%20want%20'+encodeURIComponent(d.getAttribute('data-text'));
+  var html=''; for(var i=0;i<stories.length;i++){ html+='<div><i style="width:'+(i<cur?100:i==cur?pr:0)+'%;"></i></div>'; }
+  sProgress.innerHTML=html;
+}
+function startBar(){
+  clearInterval(tm); pr=0;
+  tm=setInterval(function(){
+    pr+=1.2;
+    var bars=sProgress.children;
+    if(bars[cur]) bars[cur].children[0].style.width=pr+'%';
+    if(pr>=100){ clearInterval(tm); goNext(); }
+  },40);
+}
+function goNext(){ if(cur<stories.length-1){ cur++; showStory(); startBar(); } else { box.classList.remove('active'); clearInterval(tm); } }
+function goPrev(){ if(cur>0){ cur--; showStory(); startBar(); } }
+
+stories.forEach(function(el,i){ el.addEventListener('click',function(){ openStory(i); }); });
+document.getElementById('sClose').onclick=function(){ box.classList.remove('active'); clearInterval(tm); };
+document.getElementById('sNext').onclick=goNext;
+document.getElementById('sPrev').onclick=goPrev;
 </script>
 </body>
-</html>
+                                                                    </html>

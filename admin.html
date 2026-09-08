@@ -6,6 +6,27 @@
 <div class="bg-white p-4 rounded shadow mb-8"><h2 class="font-bold mb-3">Add New Product</h2><div class="grid grid-cols-2 md:grid-cols-5 gap-2"><input id="newName" placeholder="Name" class="border p-2 text-sm"/><input id="newPrice" type="number" placeholder="Price R" class="border p-2 text-sm"/><select id="newCat" class="border p-2 text-sm"><option value="women">women</option><option value="bouquet">bouquet</option></select><input id="newBadge" placeholder="Badge" class="border p-2 text-sm"/><input id="newImage" placeholder="Image URL" class="border p-2 text-sm col-span-2"/></div><button onclick="addProduct()" class="mt-3 bg-black text-white px-6 py-2 text-sm">ADD PRODUCT</button></div>
 <div id="list" class="grid gap-3"></div>
 </div>
+  <script>
+// === AZ COASTAL SECRET LOGIN - Only Zanele ===
+const ZANELE_PASSWORD = "Aisha2026@"; // Change to her secret pin
+let isAdmin = localStorage.getItem("zanele_admin") === "true";
+
+if (!isAdmin) {
+  let pass = prompt("🔒 AZ COASTAL ADMIN - Enter Password (Zanele Only):");
+  if (pass === ZANELE_PASSWORD) {
+    localStorage.setItem("zanele_admin", "true");
+    alert("Welcome Zanele!");
+  } else {
+    alert("Access Denied - Public cannot edit!");
+    window.location.href = "index.html"; // Send public back to shop
+  }
+}
+
+function zaneleLogout(){
+  localStorage.removeItem("zanele_admin");
+  location.reload();
+}
+</script>
 <script>
 const SUPABASE_URL = 'https://xfgfkqtryehdvxfihidg.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_DOmvNTyi_8n4h5igNaq1Jw_y0rpLLez';
